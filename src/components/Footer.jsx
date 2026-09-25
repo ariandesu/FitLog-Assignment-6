@@ -1,25 +1,20 @@
 "use client";
-import Link from "next/link";
-import { useWorkout } from "@/context/WorkoutContext";
+
 export default function Footer() {
-  const { todayPlanCount } = useWorkout();
   return (
-    <footer className="bg-dark/50 border-t border-muted/20 py-12 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="flex items-center gap-4">
-          <img src="/assets/logo.png" className="h-10 invert brightness-0" alt="Logo" />
-          <h3 className="font-display text-xl font-bold text-white">FitLog</h3>
+    <footer className="bg-[#0a0a0a] border-t border-white/10 mt-auto">
+      <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 bg-white rounded flex items-center justify-center">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 10H17M7 6V14M13 6V14M5 8V12M15 8V12" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+          <span className="font-display font-bold text-white text-[14px] tracking-[0.7px]" style={{ fontFamily: "Oswald", fontWeight: 700 }}>
+            FITLOG
+          </span>
         </div>
-        <div className="flex gap-6 text-sm text-muted">
-          <Link href="/" className="hover:text-accent">Library</Link>
-          <Link href="/my-plan/today" className="hover:text-accent">Plan</Link>
-          <Link href="/my-plan/saved" className="hover:text-accent">Saved</Link>
-          <Link href="/my-plan/completed" className="hover:text-accent">Log</Link>
-        </div>
-        <div className="text-right text-xs text-muted">
-          <p>{todayPlanCount} lifts planned</p>
-          <p>© 2026 FitLog</p>
-        </div>
+        <p className="text-xs text-muted text-center">© 2026 FitLog — Workout Library. Train hard, log honest.</p>
       </div>
     </footer>
   );

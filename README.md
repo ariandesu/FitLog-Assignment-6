@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FitLog — Workout Library. Train hard, log honest.
 
-## Getting Started
+Dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.
 
-First, run the development server:
+Live: `vercel --prod` pending (run `vercel login && vercel --prod`)
+Repo: https://github.com/ariandesu/FitLog-Assignment-6
 
+## Tech Stack
+- Next.js 16.3.6 App Router + Turbopack
+- React 19.2.8
+- Tailwind CSS 4 + @tailwindcss/postcss
+- Context API + localStorage for plan/saved/completed
+
+## Features
+1. Workout Library — 3×4 grid (responsive 1/2/3), fetches `https://api.abcz.workers.dev/api/fitlog`, cards show image, category pills, name, equipment, duration/calories/rating, link to detail
+2. Hero Banner — `WORKOUT LIBRARY` eyebrow, `TRAIN WITH INTENT. LOG EVERY SET.` + subtitle + `BROWSE WORKOUTS` → `#library`
+3. Navbar — logo left, `My Dashboard` middle, active-aware, badges Plan ` #ccff00` / Saved outline → `/my-plan`, live counters
+4. Workout Details — 2-col, specs (equipment/difficulty/sets/reps/duration/calories/rating), instructions, `Add to today's plan` / `Save for later` with localStorage + cap 5
+5. My Plan — `/my-plan` dashboard, metrics Exercises/Minutes/Calories, tabs Today's/Saved, loading `Loading workouts…`, cards View Details/Mark Done/X, empty `NOTHING HERE YET` + Go to workouts, 404 + reload-safe
+
+## Run
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
+npm run build # verify Vercel build passes (✓ Turbopack)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy (Vercel)
+```bash
+npm i -g vercel@latest
+vercel login
+vercel --prod   # or push to main → auto-deploy
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Commits (9)
+- Built-in 9 meaningful commits covering design system → navbar → library → details → context → my-plan → history → polish → deploy fix.
